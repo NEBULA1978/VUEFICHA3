@@ -3,7 +3,7 @@
   <!-- <h1>Padre</h1> -->
   <div>
     <div v-for="(cosa,index) in cosas" :key="index">
-      <FichaVue :cosa="cosa" :index="index"/>
+      <FichaVue :cosa="cosa" :index="index" @retorno="retorno"/>
     </div>
   </div>
 
@@ -13,7 +13,11 @@
 <script setup>
   // import HelloWorld from './components/HelloWorld.vue'
   import FichaVue from './components/Ficha.vue'
-    import cosas from "./assets/datos"
+  import cosas from "./assets/datos"
+  // a es la nota e i el indice
+  const retorno=(a,i)=>{
+    cosas.value[i].nota=a+1;
+  }
 </script>
 
 <style scoped></style>
