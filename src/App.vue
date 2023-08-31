@@ -16,7 +16,13 @@
   import cosas from "./assets/datos"
   // a es la nota e i el indice
   const retorno=(a,i)=>{
-    cosas.value[i].nota=a+1;
+    if(a>=6){
+      cosas.value[i].nota=1;
+
+    }else{
+      cosas.value[i].nota=a+1;
+    }
+
   }
 </script>
 
